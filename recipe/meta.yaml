@@ -1,4 +1,4 @@
-{% set version = '0.2.0' %}
+{% set version = "0.2.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/ergm.multi_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/ergm.multi/ergm.multi_{{ version }}.tar.gz
-  sha256: 13e27ba59b087f09cfb3dc6fccaa360e4ae0159f13e7a20d2c3306b5fe74fb5a
+  sha256: e09dd0d7207a8214746ea251a50c93f6f5de255175309dc8757206f419a01902
 
 build:
-  merge_build_host: True  # [win]
-  number: 1
+  merge_build_host: true  # [win]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -66,10 +66,8 @@ about:
   home: https://statnet.org
   dev_url: https://github.com/statnet/ergm.multi
   license: GPL-3.0-only
-  summary: A set of extensions for the 'ergm' package to fit multilayer/multiplex/multirelational
-    networks and samples of multiple networks. 'ergm.multi' is a part of the Statnet
-    suite of packages for network analysis. See Krivitsky, Koehly, and Marcum (2020)
-    <doi:10.1007/s11336-020-09720-7> and Krivitsky, Coletti, and Hens (2022) <doi:10.48550/arXiv.2202.03685>.
+  summary: A set of extensions for the 'ergm' package to fit multilayer/multiplex/multirelational networks and samples of multiple networks. 'ergm.multi' is a part of the Statnet suite of packages for network analysis. See Krivitsky, Koehly, and Marcum (2020) <doi:10.1007/s11336-020-09720-7> and Krivitsky, Coletti, and Hens
+    (2022) <doi:10.48550/arXiv.2202.03685>.
   license_family: GPL3
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
