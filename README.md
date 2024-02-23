@@ -3,6 +3,7 @@ About r-ergm.multi-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-ergm.multi-feedstock/blob/main/LICENSE.txt)
 
+
 About r-ergm.multi
 ------------------
 
@@ -13,6 +14,7 @@ Package license: GPL-3.0-only
 Summary: A set of extensions for the 'ergm' package to fit multilayer/multiplex/multirelational networks and samples of multiple networks. 'ergm.multi' is a part of the Statnet suite of packages for network analysis. See Krivitsky, Koehly, and Marcum (2020) <doi:10.1007/s11336-020-09720-7> and Krivitsky, Coletti, and Hens (2022) <doi:10.48550/arXiv.2202.03685>.
 
 Development: https://github.com/statnet/ergm.multi
+
 About r-ergm.multi
 ------------------
 
@@ -157,7 +159,7 @@ available continuous integration services. Thanks to the awesome service provide
 [CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
 [Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
 it is possible to build and upload installable packages to the
-[conda-forge](https://anaconda.org/conda-forge) [Anaconda-Cloud](https://anaconda.org/)
+[conda-forge](https://anaconda.org/conda-forge) [anaconda.org](https://anaconda.org/)
 channel for Linux, Windows and OSX respectively.
 
 To manage the continuous integration and simplify feedstock maintenance
