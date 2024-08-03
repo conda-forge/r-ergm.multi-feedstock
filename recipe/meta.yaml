@@ -1,6 +1,5 @@
 {% set version = "0.2.1" %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-ergm.multi
@@ -13,23 +12,27 @@ source:
   sha256: e09dd0d7207a8214746ea251a50c93f6f5de255175309dc8757206f419a01902
 
 build:
-  merge_build_host: true  # [win]
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
-  skip: true  # [win]
+  missing_dso_whitelist:
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
+    - cross-r-base {{ r_base }}  # [build_platform != target_platform]
     - {{ compiler('c') }}        # [not win]
+    - {{ stdlib("c") }}          # [not win]
     - {{ compiler('m2w64_c') }}  # [win]
+    - {{ stdlib("m2w64_c") }}    # [win]
     - {{ posix }}filesystem      # [win]
     - {{ posix }}make
     - {{ posix }}sed             # [win]
     - {{ posix }}coreutils       # [win]
     - {{ posix }}zip             # [win]
-    - cross-r-base {{ r_base }}  # [build_platform != target_platform]
   host:
     - r-base
     - r-matrix
@@ -44,7 +47,6 @@ requirements:
     - r-tibble >=3.2.1
   run:
     - r-base
-    - {{ native }}gcc-libs         # [win]
     - r-matrix
     - r-rdpack >=2.6
     - r-ergm >=4.6.0
